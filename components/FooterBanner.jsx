@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { urlFor } from "../lib/client";
 
 const FooterBanner = ({
@@ -33,7 +34,7 @@ const FooterBanner = ({
           <p>{desc}</p>
           <Link href={`product/${product}`}>
             <>
-            <button type="button">{buttonText}</button>
+            <Button>{buttonText}</Button>
             </>
           </Link>
         </div>
