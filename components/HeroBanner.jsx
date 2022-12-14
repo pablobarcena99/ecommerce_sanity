@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { urlFor } from "../lib/client";
 
 const BannerWrapper = styled.div`
-  background-color: antiquewhite;
+  background-color: #82eee9;
   padding: 40px;
 `;
 const BannerImg = styled.img`
@@ -16,13 +16,16 @@ const BannerInfo = styled.div`
     margin: 0px;
   }
   p {
-    font-size: 30px;
+    font-size: calc(1rem + 1vw);
   }
   h3 {
-    font-size: 50px;
+    font-size: calc(1.9rem + 1vw);
+    span {
+      border-bottom: solid 5px #a390ff;
+    }
   }
   h1 {
-    font-size: 70px;
+    font-size: calc(1.9rem + 2vw);
     font-weight: 500;
   }
   button {
@@ -44,12 +47,12 @@ const HeroBanner = ({
 }) => {
   return (
     <BannerWrapper>
-      <Container fluid>
+      <Container>
         <Row>
           <Col lg={8} md={6} sm={12}>
             <BannerInfo>
               <p>{smallText}</p>
-              <h3>{midText}</h3>
+              <h3><span>{midText}</span></h3>
               <h1>{largeText1}</h1>
               <Link href={`/product/${product}`}>
                 <Button variant='dark'>{buttonText}</Button>
