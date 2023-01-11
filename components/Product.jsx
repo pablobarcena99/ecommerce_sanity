@@ -6,11 +6,15 @@ import { urlFor } from "../lib/client";
 const ProductCard = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #e9e2e2;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 4px;
 `;
 const ProductData = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  height: 50px;
   p {
     margin: 0px;
     padding: 0px;
@@ -19,11 +23,11 @@ const ProductData = styled.div`
 
 const ProductName = styled.p`
   color: black;
-  font-weight: 600;
 `;
 
 const ProductImage = styled.img`
-  background-color: antiquewhite;
+  background-color: #d4d4d4;
+  object-fit: cover;
   width: 100%;
 `;
 const Product = ({ product: { image, name, slug, price } }) => {

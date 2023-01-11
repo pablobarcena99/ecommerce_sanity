@@ -1,24 +1,29 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
+import styled from "styled-components";
+import Navbar2 from "./Navbar2";
+import { Container } from "react-bootstrap";
 
-const Layout = ({children}) => {
+const LayoutBackground = styled.div`
+  background-color: #121212;
+`;
+const Layout = ({ children }) => {
   return (
-    <div className='layout'>
+    <LayoutBackground>
       <Head>
         <title>Ecommerce store</title>
       </Head>
       <header>
-        <Navbar />
+        <Navbar2 />
       </header>
-      <main className="main-container">
+      <main className='main-container'>
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    </LayoutBackground>
   );
 };
 

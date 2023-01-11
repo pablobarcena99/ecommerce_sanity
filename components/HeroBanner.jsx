@@ -5,8 +5,8 @@ import styled from "styled-components";
 import { urlFor } from "../lib/client";
 
 const BannerWrapper = styled.div`
-  background-color: #82eee9;
-  padding: 40px;
+  /* background-color: #82eee9; */
+padding: 20px 0;
 `;
 const BannerImg = styled.img`
   width: 100%;
@@ -17,14 +17,19 @@ const BannerInfo = styled.div`
   }
   p {
     font-size: calc(1rem + 1vw);
+    color: white;
   }
   h3 {
+    color: white;
+
     font-size: calc(1.9rem + 1vw);
     span {
       border-bottom: solid 5px #a390ff;
     }
   }
   h1 {
+    color: white;
+
     font-size: calc(1.9rem + 2vw);
     font-weight: 500;
   }
@@ -40,6 +45,7 @@ const BannerInfo = styled.div`
 const BannerDesc = styled.div`
   * {
     margin: 0px;
+    color: white;
   }
 `;
 const HeroBanner = ({
@@ -47,7 +53,6 @@ const HeroBanner = ({
 }) => {
   return (
     <BannerWrapper>
-      <Container>
         <Row>
           <Col lg={8} md={6} sm={12}>
             <BannerInfo>
@@ -55,7 +60,7 @@ const HeroBanner = ({
               <h3><span>{midText}</span></h3>
               <h1>{largeText1}</h1>
               <Link href={`/product/${product}`}>
-                <Button variant='dark'>{buttonText}</Button>
+                <Button variant="primary">{buttonText}</Button>
               </Link>
             </BannerInfo>
           </Col>
@@ -69,7 +74,6 @@ const HeroBanner = ({
             <p>{desc}</p>
           </BannerDesc>
         </Row>
-      </Container>
     </BannerWrapper>
   );
 };

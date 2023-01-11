@@ -1,0 +1,23 @@
+.navbar-brand{
+  padding-bottom: 0px !important;
+}
+
+
+/* Bootstrap */
+.navbar-toggler{
+  border-radius: 0px !important;
+  transition: none !important;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none !important;
+}
+.nav-link{
+  text-align: right;
+}
+
+@media(max-width: 290px) {
+  .navbar-brand{
+    font-size: 0px;
+  }
+}

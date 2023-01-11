@@ -1,8 +1,23 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import styled from "styled-components";
 import { urlFor } from "../lib/client";
 
+const FootBannerContainer = styled.div`
+  border: 2px solid white;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  margin-top: 30px;
+`;
+
+const Info = styled.div`
+  h3 {
+    font-size: calc(2rem + 2vw);
+  }
+`;
 const FooterBanner = ({
   footerBanner: {
     discount,
@@ -14,33 +29,40 @@ const FooterBanner = ({
     product,
     buttonText,
     image,
-    desc
+    desc,
   },
 }) => {
   return (
-    <div className='footer-banner-container'>
-      <div className='banner-desc'>
-        <div className='left'>
-          <div>
-            {discount}
-            <h3>{largeText1}</h3>
-            <h3>{largeText2}</h3>
-            <p>{saleTime}</p>
-          </div>
-        </div>
-        <div className='right'>
-          <p>{smallText}</p>
-          <h3>{midText}</h3>
-          <p>{desc}</p>
-          <Link href={`product/${product}`}>
-            <>
-            <Button>{buttonText}</Button>
-            </>
-          </Link>
-        </div>
+    <FootBannerContainer>
+      <Container>
+        <Row>
+          <Col lg={6}>
+            <Info>
+              {discount}
+              <h3>
+                {largeText1}
+                <br />
+                {largeText2}
+              </h3>
+              <p>{saleTime}</p>
+            </Info>
+          </Col>
+          <Col lg={6}>
+            <Info>
+              <p>{smallText}</p>
+              <h3>{midText}</h3>
+              <p>{desc}</p>
+              <Link href={`product/${product}`}>
+                <>
+                  <Button>{buttonText}</Button>
+                </>
+              </Link>
+            </Info>
+          </Col>
+        </Row>
         {/* <img src={urlFor(image)} alt="" className="footer-banner-image"/> */}
-      </div>
-    </div>
+      </Container>
+    </FootBannerContainer>
   );
 };
 
