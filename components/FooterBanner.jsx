@@ -53,7 +53,6 @@ const FooterBanner = ({
               <p>{smallText}</p>
               <h3>{midText}</h3>
               <p>{desc}</p>
-              {console.log(slug.current)}
               <Link href={`/product/${slug.current}`}>
                 <Button variant='primary'>{buttonText}</Button>
               </Link>
