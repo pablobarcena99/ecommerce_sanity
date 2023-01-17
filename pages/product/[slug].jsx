@@ -6,6 +6,64 @@ import { Navbar, Product } from "../../components";
 import { useStateContext } from "../../context/StateContext";
 import { client, urlFor } from "../../lib/client";
 
+const PurchaseSelection = styled.div`
+  h3 {
+    margin-bottom: 20px;
+  }
+  span {
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: black;
+  }
+  button {
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+`;
+
+const QuantityControls = styled.div`
+  display: flex;
+  user-select: none;
+`;
+const QuantityButton = styled.div`
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #121212;
+`;
+const ProductInfo = styled.div`
+  margin: 100px 0;
+`;
+const MainImages = styled.div`
+  display: flex;
+  justify-content: center;
+  img {
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    max-width: 400px;
+  }
+`;
+
+const SmallImagesContainer = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+const Details = styled.div`
+  color: white;
+`;
+
+const RelatedProducts = styled.div`
+  h2 {
+    color: white;
+  }
+`;
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
@@ -15,67 +73,11 @@ const ProductDetails = ({ product, products }) => {
     onAdd(product, qty);
     setShowCart(true);
   };
-  const ProductInfo = styled.div`
-    margin: 100px 0;
-  `;
-  const MainImages = styled.div`
-    display: flex;
-    justify-content: center;
-    img {
-      background-color: aliceblue;
-      margin-bottom: 10px;
-      max-width: 400px;
-    }
-  `;
 
-  const SmallImagesContainer = styled.div`
-    display: flex;
-    gap: 10px;
-  `;
-  const ProductDetails = styled.div`
-    color: white;
-  `;
-
-  const PurchaseSelection = styled.div`
-    h3 {
-      margin-bottom: 20px;
-    }
-    span {
-      cursor: pointer;
-      border: 1px solid white;
-      padding: 10px;
-      background-color: black;
-    }
-    button {
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-  `;
-
-  const QuantityControls = styled.div`
-    display: flex;
-  `;
-  const QuantityButton = styled.div`
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    cursor: pointer;
-    border: 1px solid white;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid #121212;
-  `;
-  const RelatedProducts = styled.div`
-    h2 {
-      color: white;
-    }
-  `;
   return (
     <>
-      <ProductInfo>
-        <Container>
+      <Container>
+        <ProductInfo>
           <Row>
             <Col>
               <MainImages>
@@ -94,7 +96,7 @@ const ProductDetails = ({ product, products }) => {
               </MainImages>
             </Col>
             <Col>
-              <ProductDetails>
+              <Details>
                 <h1>{name}</h1>
                 <h4>Details:</h4>
                 <p>{details}</p>
@@ -121,23 +123,23 @@ const ProductDetails = ({ product, products }) => {
                     </Button>
                   </div>
                 </PurchaseSelection>
-              </ProductDetails>
+              </Details>
             </Col>
           </Row>
-        </Container>
-      </ProductInfo>
-      <RelatedProducts>
-        <h2>You may also like</h2>
-        <div>
-          <Row>
-            {products.map((item) => (
-              <Col lg={3} md={4}>
-                <Product key={item._id} product={item} />
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </RelatedProducts>
+        </ProductInfo>
+        <RelatedProducts>
+          <h2>You may also like</h2>
+          <div>
+            <Row>
+              {products.map((item) => (
+                <Col lg={3} md={4}>
+                  <Product key={item._id} product={item} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </RelatedProducts>
+      </Container>
     </>
   );
 };
@@ -174,3 +176,5 @@ export const getStaticProps = async ({ params: { slug } }) => {
   };
 };
 export default ProductDetails;
+
+export { PurchaseSelection, QuantityControls, QuantityButton };

@@ -30,6 +30,7 @@ const FooterBanner = ({
     buttonText,
     image,
     desc,
+    slug
   },
 }) => {
   return (
@@ -52,10 +53,9 @@ const FooterBanner = ({
               <p>{smallText}</p>
               <h3>{midText}</h3>
               <p>{desc}</p>
-              <Link href={`product/${product}`}>
-                <>
-                  <Button>{buttonText}</Button>
-                </>
+              {console.log(slug.current)}
+              <Link href={`/product/${slug.current}`}>
+                <Button variant='primary'>{buttonText}</Button>
               </Link>
             </Info>
           </Col>

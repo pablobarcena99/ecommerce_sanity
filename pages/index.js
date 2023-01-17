@@ -12,9 +12,9 @@ const SectionTitle = styled.h2`
 const Home = ({ products, bannerData }) => {
   return (
     <>
-      <Container fluid>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-      <SectionTitle>Best Selling Products</SectionTitle>
+      <Container>
+        <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+        <SectionTitle>Best Selling Products</SectionTitle>
         <Row>
           {products?.map((product) => (
             <Col lg={3} md={6} sm={12}>
@@ -22,7 +22,7 @@ const Home = ({ products, bannerData }) => {
             </Col>
           ))}
         </Row>
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+        <FooterBanner footerBanner={bannerData && bannerData[0]} />
       </Container>
     </>
   );

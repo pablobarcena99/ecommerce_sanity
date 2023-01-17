@@ -28,7 +28,7 @@ justify-content: space-between;
 const Footer = () => {
   return (
     <>
-      <Container fluid>
+      <Container>
         <FooterContainer>
           <p>Pablo Bárcena 2023</p>
           {/* <p className='icons'> <AiFillInstagram /> <AiOutlineTwitter /></p> */}

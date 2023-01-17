@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+*{
+
+  font-family: Montserrat;
+}
 html,
-body{
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -725,6 +730,4 @@ span.text-red {
     width: 300px;
     margin: auto;
   }
-
-
 }
