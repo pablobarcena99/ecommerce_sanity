@@ -21,7 +21,7 @@ const BannerInfo = styled.div`
   }
   h3 {
     color: white;
-
+    font-family: var(--font-montserrat);
     font-size: calc(1.9rem + 1vw);
     span {
       border-bottom: solid 5px #a390ff;
@@ -29,7 +29,7 @@ const BannerInfo = styled.div`
   }
   h1 {
     color: white;
-
+    font-family: var(--font-montserrat);
     font-size: calc(1.9rem + 2vw);
     font-weight: 500;
   }
@@ -50,7 +50,7 @@ const BannerDesc = styled.div`
   }
 `;
 const HeroBanner = ({
-  heroBanner: { smallText, midText, largeText1, image, product, buttonText, desc, slug},
+  heroBanner: { smallText, midText, largeText1, image, product, buttonText, desc, slug },
 }) => {
   return (
     <BannerWrapper>
