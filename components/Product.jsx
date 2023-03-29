@@ -10,12 +10,14 @@ const ProductCard = styled.div`
   padding: 20px;
   margin-bottom: 24px;
   border-radius: 4px;
+
 `;
 const ProductData = styled.div`
   display: flex;
   justify-content: space-between;
   height: 50px;
   p {
+    color: black;
     margin: 0px;
     padding: 0px;
   }
