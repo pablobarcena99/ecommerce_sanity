@@ -6,16 +6,21 @@ import SSRProvider from "react-bootstrap/SSRProvider";
 import "../styles/Navbar2.css";
 import "../styles/custom.scss";
 import "../styles/App.scss";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ['100', '200', '300']
+});
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={`${montserrat.variable}`}>
+    <div className={`${montserrat.variable} ${poppins.variable}`}>
       <SSRProvider>
         <StateContext>
           <Layout>
