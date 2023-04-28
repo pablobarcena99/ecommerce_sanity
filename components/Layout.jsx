@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
         <Navbar2 />
       </header>
       <main>
+        <div style={{height: "43px"}}></div>
         {children}
         <footer>
           <Footer />

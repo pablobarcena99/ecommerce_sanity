@@ -33,10 +33,11 @@ const QuantityButton = styled.div`
   justify-content: center;
   width: 45px;
   cursor: pointer;
-  border: 1px solid white;
-  padding: 10px;
+  padding: 7px 10px;
+  margin: 1px;
   background-color: white;
-  border: 1px solid #121212;
+  border: 2px solid #121212;
+  border-radius: 20%;
 `;
 const ProductInfo = styled.div`
   margin: 100px 0;
