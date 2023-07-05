@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { urlFor } from "../lib/client";
+import Image from "next/image";
 
 const ProductCard = styled.div`
   display: flex;
